@@ -1,0 +1,6 @@
+{
+ "makeAuthenticatedRequests":true,
+ "authClientId":"",
+ "authClientSecret":"",
+ "starGazersTreshold":10
+}
