@@ -37,9 +37,9 @@ Config.json has 4 fields
 }
 ```
 
-+The first field `makeAuthenticatedRequests` specifies wether or not you would like to make Authenticated Requests to the Github API. Authenticated requests have less limitations in terms of request per unit of time.
++ The first field `makeAuthenticatedRequests` specifies wether or not you would like to make Authenticated Requests to the Github API. Authenticated requests have less limitations in terms of request per unit of time.
 
-+The Second and third fields `authClientId` and  `authClientSecret` specifie your github API credentials in case you selected TRUE for the first field
++ The Second and third fields `authClientId` and  `authClientSecret` specifie your github API credentials in case you selected TRUE for the first field
 
 + The last field `starGazersTreshold` specifies the minimum of stars
 
