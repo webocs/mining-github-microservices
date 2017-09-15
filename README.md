@@ -21,7 +21,7 @@ Al repositores in JSON files are decribed by the following structure
   "type" : "repository",
   "created_repo_id" : xxxxxxxx,
   "created_repo_name" : "user/repositoryName",
-  "created_repo_url" : "/repos/user/chrepositoryNameronicle"
+  "created_repo_url" : "/repos/user/repositoryName"
 }
 ```
 
@@ -30,7 +30,7 @@ Al repositores in JSON files are decribed by the following structure
 Config.json has 4 fields
 ```
 {
- "makeAuthenticatedRequests` specifies":true,
+ "makeAuthenticatedRequests":true,
  "authClientId":"",
  "authClientSecret":"",
  "starGazersTreshold":10
