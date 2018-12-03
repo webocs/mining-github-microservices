@@ -1,0 +1,17 @@
+{
+    "name": "webocs/mining-github-microservices",
+    "description": "A GitHub miner, GraphQL based, for the article \"Microservices in the Wild: the Github Landscape\"",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Germán Pablo Del Tedesco",
+            "email": "gpdeltedesco@emptybox.com.ar"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "require": {}
+}
