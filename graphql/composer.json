@@ -13,5 +13,8 @@
             "App\\": "src/"
         }
     },
-    "require": {}
+    "require": {
+        "php": "^7.1.3",
+        "cpliakas/git-wrapper": "^2.1"
+    }
 }

@@ -30,7 +30,7 @@ Files resulting from processor are:
 
 This version requires:
 
- - [PHP 7+](http://php.net)
+ - [PHP 7.1.3+](http://php.net)
  - [Composer](https://getcomposer.org/)
  - A [GitHub OAuth token](https://help.github.com/articles/creating-an-access-token-for-command-line-use/)
 
