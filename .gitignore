@@ -59,4 +59,5 @@ typings/
 
 
 /graphql/vendor/
-/graphql/out/
+/graphql/runtime/
+/graphql/config.ini
