@@ -1,0 +1,17 @@
+; GraphQL endpoint
+api.endpoint=https://api.github.com/graphql
+
+; GraphQL OAuth token
+api.token=
+
+; Base searches
+api.base_searches[]=microservice in:description
+api.base_searches[]=NOT microservice in:description topic:microservice
+api.base_searches[]=NOT microservice in:description topic:microservices
+
+; Search parameters (will be applied to all searches)
+api.search_min_stars=10
+api.search_min_pushed_at=2018-10-01
+
+; Git configuration
+git.timeout=600
