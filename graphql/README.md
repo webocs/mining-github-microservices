@@ -1,48 +1,56 @@
 # GitHub microservices miner - GraphQL version
 
-Fetches repositories data, using [GitHub's GraphQL API].
+Fetches repositories data, using [GitHub's GraphQL API], and keeps a local index for
+further analysis.
 
 [GitHub's GraphQL API]: https://developer.github.com/v4/
 
 ## What does it do?
 
-The program works in two stages: *mining* and *processing*.
-
-### Mining stage
-
-Triggered by `bin/miner.php`, will try to fetch an index of repositories from GitHub,
-with some useful aggregate data. The result can be checked on `out/miner-result.json`.
-
-### Processing stage
-
-Triggered by `bin/processor.php`, will iterate the raw index data, providing a more
-"flat" dataset. It will add some computed fields to.
-
-Files resulting from processor are:
-
- - `out/processor-result.json`: same array as index, but normalized.
- - `out/repositories.csv`: plain CSV with the collected data for repositories.
- - `out/statistics.csv`: plain CSV with global aggerate data (number of repos, etc).
- - `out/topics.csv`: list of topics, with ocurrences count.
- - `out/languages.csv`: list of lenguages, with ocurrences count.
+The program obtains data in two stages:
+  - **index**: Fetches, given a seto of GraphQL queries, a list of repositories data.
+  - **fetch**: Fetches, for every indexed repository, it's corresponding git repository.
 
 ## Requirements
 
 This version requires:
 
+ - [SQLite 3.9+](https://www.sqlite.org), with JSON support.
  - [PHP 7.1.3+](http://php.net)
  - [Composer](https://getcomposer.org/)
  - A [GitHub OAuth token](https://help.github.com/articles/creating-an-access-token-for-command-line-use/)
 
-## Run instructions
+## Install
 
-Get ready:
+ 1. Clone this repo, and go to `graphql` directory
 
- - Go to graphql directory.
- - Run: `composer install`
 
-Execute miner:
- - Run `GHMINER_OAUTH_TOKEN=your_private_token bin/miner.php`
+    git clone https://github.com/webocs/mining-github-microservices
+    cd mining-github-microservices/graphql
 
-Execute processor:
- - Run `bin/processor.php`
+ 2. Create `runtime` directory (for local data storage, and log)
+
+
+    mkdir runtime
+
+ 3. Create and provision database
+
+
+    sqlite3 runtime/store.sqlite < database.sql
+
+ 4. Install composer dependencies
+
+
+    composer install
+
+ 5. Configure application, setting (at least) your OAuth token
+
+
+    cp config.ini.dist config.ini
+    sensible-editor config.ini
+
+You are ready to go!
+
+## Run
+
+Execute `bin/miner` for a list of commands.
